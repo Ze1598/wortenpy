@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-15" ?>
+<product reference="6060387" EAN="0045496452315" availability="Available">
+	<name>Consola NINTENDO Switch Cinzenta</name>
+	<page href="https://www.worten.pt/gaming/nintendo-switch/consolas-nintendo-switch/consola-nintendo-switch-cinzenta-6060387"/>
+	<category>Consolas Nintendo Switch</category>
+	<price on_sale="N" unit="EURO">329,99</price>
+	<original_price discount="None" unit="EURO">None</original_price>
+	<pictures>
+		<picture href="https://www.worten.pt/i/7eb65db02f2baadbde4a3f8c010e0c5b3143508e.jpg"/>
+		<picture href="https://www.worten.pt/i/08131e5a92ca06a7d58abb808fb6a858490dca04.jpg"/>
+		<picture href="https://www.worten.pt/i/34ae265de6f664954c7e0367ae50a50279bb4d7b.jpg"/>
+		<picture href="https://www.worten.pt/i/2db661aca2dd1bef03a803e98a0a8f85cf9e8756.jpg"/>
+		<picture href="https://www.worten.pt/i/38593833baa6ffe5380016e994f17d05853f5c8f.jpg"/>
+		<picture href="https://www.worten.pt/i/98cd03eb76ffd50dd14df2f2c4d0e6830545bba2.jpg"/>
+		<picture href="https://www.worten.pt/i/a2e86a2b547fdbc4870ade82c0fd0c7530587685.jpg"/>
+		<picture href="https://www.worten.pt/i/f76ab1a092d9d6f930605a6fbddb9ed6e2ee9a7d.jpg"/>
+		<picture href="https://www.worten.pt/i/388e001dd2311214abafd04ea31418422e51f456.jpg"/>
+		<picture href="https://www.worten.pt/i/c24ab91660243de752e62eed8f665c7b3fdc9f07.jpg"/>
+		<picture href="https://www.worten.pt/i/b6f4959f6342eb18c883adb1847256678e91502f.jpg"/>
+		<picture href="https://www.worten.pt/i/f47736ce3da15725949bf59bc660447f2dfe4607.jpg"/>
+		<picture href="https://www.worten.pt/i/3bac30e3995aca1bc8451168c73fe162987426a6.jpg"/>
+		<picture href="https://www.worten.pt/i/529adb89dd4ccfcdbd0fe6ae01a4b81b35fbd3ee.jpg"/>
+		<picture href="https://www.worten.pt//img.youtube.com/vi/jfKw0BYmIfg/default.jpg"/>
+		<picture href="https://www.worten.pt//img.youtube.com/vi/S_dZ93lsZQ8/default.jpg"/>
+	</pictures>
+	<description>None</description>
+	<more_info>
+		<info type="BRAND">NINTENDO</info>
+		<info type="MODEL">Nintendo Switch Cinzenta</info>
+		<info type="WEIGHT">None</info>
+		<info type="DIMENSIONS">13,9 mm cm</info>
+		<info type="COLOR">Cinzento</info>
+	</more_info>
+</product>
