@@ -9,10 +9,15 @@ This extraction can be made into a Python dictionary, a string with XML ready to
 Below is a step by step of the core functionalities for the module:
 
 1- Connect to worten (Worten());
+
 2- Make a query (.make_query(tags, sortBy="", hitsPerPage="", page=""));
+
 3- Get product results (.get_prods(n));
+
 4- Create an object for a single product (Product(single_product));
+
 5- Create a dictionary/XML string/JSON object using the product's main information (.get_main_info('dictionary', 'xml', 'json'));
+
 6- Create a dictionary/XML string/JSON object using the all of the product's scraped information (.get_all_info('dictionary', 'xml', 'json')).
 	
 	
