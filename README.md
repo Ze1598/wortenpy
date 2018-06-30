@@ -22,3 +22,9 @@ Below is a step by step of the core functionalities for the module:
 	
 	
 The module is definitely open for changes in the future, specially for the translations. Even if the translations dictionary seems long, I only included the most common characteristics I found across the majority of categories available on the website.
+
+This module relies on two third party modules: beautiful Soup 4 (to work with the HTML) and Rrequests (for the GET requests).
+
+-Beautiful Soup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+
+-Requests: http://docs.python-requests.org/en/master/
