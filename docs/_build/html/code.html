@@ -1,0 +1,647 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Code docs &mdash; wortenpy 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to wortenpy’s documentation!" href="index.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> wortenpy
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Code docs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">wortenpy</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Code docs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/code.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-wortenpy">
+<span id="code-docs"></span><h1>Code docs<a class="headerlink" href="#module-wortenpy" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="wortenpy.Worten">
+<em class="property">class </em><code class="descclassname">wortenpy.</code><code class="descname">Worten</code><a class="headerlink" href="#wortenpy.Worten" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for connecting to Worten and retrieving products from queries.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
+<li><strong>endpoint</strong> (<em>str</em>) – The target website (worten.pt in this case).</li>
+<li><strong>hitsPerPage</strong> (<em>str</em>) – The number of results to be shown per page.</li>
+<li><strong>page</strong> (<em>str</em>) – The page of results to request.</li>
+<li><strong>query</strong> (<em>str</em>) – The query search term(s).</li>
+<li><strong>query_soup</strong> (<em>bs4.BeautifulSoup</em>) – A BeautifulSoup object holding the the source code for a page of query results.</li>
+<li><strong>retrived_prods</strong> (<em>list</em>) – A list of items where each item is the portion of the results page’s HTML source code relative to a product result.</li>
+<li><strong>sortBy</strong> (<em>str</em>) – The sorting order for the query results.</li>
+<li><strong>total_num_prods_found</strong> (<em>int</em>) – Number of product results for the query.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="wortenpy.Worten.connected">
+<code class="descname">connected</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wortenpy.Worten.connected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test if the connection to Worten was successful.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="wortenpy.Worten.make_query">
+<code class="descname">make_query</code><span class="sig-paren">(</span><em>tags</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#wortenpy.Worten.make_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a text query for products.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="wortenpy.Worten.get_prods">
+<code class="descname">get_prods</code><span class="sig-paren">(</span><em>num_prods</em><span class="sig-paren">)</span><a class="headerlink" href="#wortenpy.Worten.get_prods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve the first num_prods products from the query results, relative to the current page of results.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="wortenpy.Worten.get_prods_found">
+<code class="descname">get_prods_found</code><span class="sig-paren">(</span><em>prods</em><span class="sig-paren">)</span><a class="headerlink" href="#wortenpy.Worten.get_prods_found" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary with mappings of product names to the URL of the product’s page.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="wortenpy.Worten.get_prod_source">
+<code class="descname">get_prod_source</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wortenpy.Worten.get_prod_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the BeautifulSoup object with the source code of the current page of the query’s results.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="wortenpy.Worten.query_params">
+<code class="descname">query_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wortenpy.Worten.query_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary with information about the query parameters available to make text queries to Worten.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">connected</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Test if the connection to Worten was successfully
+established. In other words, we are testing if the
+request’s status code is in the 200’s.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>None</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Returns True if the connection was successful, else False.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">get_prod_source</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the BeautifulSoup object with the source code of the current page of query results.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>None</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The source code of the page.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">requests.models.Response</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">get_prods</code><span class="sig-paren">(</span><em>num_prods</em><span class="sig-paren">)</span></dt>
+<dd><p>Retrieve the first num_prods products from the query results (relative to the requested page not the first page of results).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>num_prods</strong> (<em>int</em>) – The first num_prods products will be retrieved.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>retrieved_prods</strong> – A list of all the retrived products (rather, a list where each item is the portion of the results page’s source code that’s relative to the retrieved products).</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">get_prods_found</code><span class="sig-paren">(</span><em>prods</em><span class="sig-paren">)</span></dt>
+<dd><p>Return a dictionary with mappings of the products’ names found to the the URL of its pages.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>prods</strong> (<em>list</em>) – A list of snippets of HTML from the scraped source code of a page of results, where each snippet pertains to a specific result in a query.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A dictionary with the mapping of product names to its pages’ URLs.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">make_query</code><span class="sig-paren">(</span><em>tags</em>, <em>**kwargs</em><span class="sig-paren">)</span></dt>
+<dd><p>Make a query to Worten, that is, search for products.</p>
+<p>Parameters for the query, except for the tags, must be passed as keyword arguments, with string values. For example:
+make_query(“god of war”, sortBy=”name”, hitsPerPage=”12”, page=”2”)</p>
+<p>When the parameters are passed, sortBy defaults to “relevance”, hitsPerPage to “24” and page to “1”.</p>
+<p>For more information about the parameters, call the query_params method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tags</strong> (<em>str</em>) – The string containing the tags for the query.</li>
+<li><strong>sortBy</strong> (<em>str</em><em>, </em><em>optional</em>) – The sorting order for the query results.</li>
+<li><strong>hitsPerPage</strong> (<em>str</em><em>, </em><em>optional</em>) – The number of results to be shown per page.</li>
+<li><strong>page</strong> (<em>str</em><em>, </em><em>optional</em>) – The page of results to request.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>query_soup</strong> – A BeautifulSoup object holding the the source code for the requested page of query results.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">bs4.BeautifulSoup</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NameError</span></code> – Raised if the user requested a page of results that doesn’t exist.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">query_params</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Returns a dictionary with information about each query parameter.
+The value for each pair is a tuple where the first item is a brief explanation of the parameter, the second item is a list of the possible values for each parameter and the third item is the default value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>None</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The dictionary with the parameters’ informations.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="wortenpy.Product">
+<em class="property">class </em><code class="descclassname">wortenpy.</code><code class="descname">Product</code><span class="sig-paren">(</span><em>product</em><span class="sig-paren">)</span><a class="headerlink" href="#wortenpy.Product" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for interacting with a single product’s page.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
+<li><strong>all_info</strong> (<em>dict</em>) – Dictionary with all the information scraped about a product.</li>
+<li><strong>json_format</strong> (<em>dict</em>) – A string to hold a JSON object with the product’s main information.</li>
+<li><strong>more_info</strong> (<em>bs4.element.Tag</em>) – The part of the product page’s source code about its detailed information.</li>
+<li><strong>num_pics</strong> (<em>int</em>) – Number of pictures available for the product.</li>
+<li><strong>og_price</strong> (<em>float</em>) – Original price for the product (in case it’s on sale).</li>
+<li><strong>pictures</strong> (<em>list</em>) – A list with the URLs for the available product pictures.</li>
+<li><strong>price_unit</strong> (<em>str</em>) – Unit used for the product price.</li>
+<li><strong>prod_avail</strong> (<em>str</em>) – The product availability status.</li>
+<li><strong>prod_brand</strong> (<em>str</em>) – The product’s brand.</li>
+<li><strong>prod_cat</strong> (<em>str</em><em>)</em>) – The product category.</li>
+<li><strong>prod_color</strong> (<em>str</em>) – The color of the product.</li>
+<li><strong>prod_desc</strong> (<em>str</em>) – The product description.</li>
+<li><strong>prod_dimensions</strong> (<em>str</em>) – Dimensions of the product.</li>
+<li><strong>prod_discount</strong> (<em>float</em>) – Discount percentage (in case the product is on sale).</li>
+<li><strong>prod_ean</strong> (<em>str</em>) – The product’s European Article Number, also known as International Article Number.</li>
+<li><strong>prod_link</strong> (<em>str</em>) – Product page’s URL.</li>
+<li><strong>prod_model</strong> (<em>str</em>) – The product model.</li>
+<li><strong>prod_name</strong> (<em>str</em>) – Name of the product.</li>
+<li><strong>prod_price</strong> (<em>float</em>) – The product’s current price.</li>
+<li><strong>prod_ref</strong> (<em>str</em>) – The product internal reference.</li>
+<li><strong>prod_weight</strong> (<em>str</em>) – The product weight.</li>
+<li><strong>query_prod</strong> (<em>requests.models.Response</em>) – The response for the GET request of a product’s page.</li>
+<li><strong>query_prod_soup</strong> (<em>bs4.BeautifulSoup</em>) – BeautifulSoup object for a product’s page.</li>
+<li><strong>xml_format</strong> (<em>str</em>) – A string to hold a XML with the product’s main information.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="wortenpy.Product.connected">
+<code class="descname">connected</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wortenpy.Product.connected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test if the connection to the product page was successful.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="wortenpy.Product.get_prod_source">
+<code class="descname">get_prod_source</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wortenpy.Product.get_prod_source" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the source code of the product page.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="wortenpy.Product.on_sale">
+<code class="descname">on_sale</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wortenpy.Product.on_sale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the product is on sale.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="wortenpy.Product.get_main_info">
+<code class="descname">get_main_info</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#wortenpy.Product.get_main_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a Python dictionary and/or XML string and/or JSON object with the main informations about the product.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="wortenpy.Product.main_info_types">
+<code class="descname">main_info_types</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wortenpy.Product.main_info_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary with the main information types’ names.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="wortenpy.Product.prod_info_types">
+<code class="descname">prod_info_types</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wortenpy.Product.prod_info_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary with the name of all the types of information.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="wortenpy.Product.get_all_info">
+<code class="descname">get_all_info</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#wortenpy.Product.get_all_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a Python dictionary and/or XML string and/or JSON object with all the informations about the product.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="wortenpy.Product.specific_info">
+<code class="descname">specific_info</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#wortenpy.Product.specific_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a Python dictionary with only the types of information passed as arguments to the function call.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">connected</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Test if the connection to the product page was successfully established. In other words, we are testing if the request’s status code is in the 200’s.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>None</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Returns True if the connection was successful, else False.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">get_all_info</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
+<dd><p>Return all the scraped main information of a product.</p>
+<p>This can be a dictionary, a formated string to be written to an .xml file and/or a JSON object. The returned formats are saved in a single dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>dictionary</strong> (<em>str</em><em>, </em><em>optional</em>) – Indicates that the method should return the information in the form of a Python dictionary.</li>
+<li><strong>xml</strong> (<em>str</em><em>, </em><em>optional</em>) – Indicates that the method should return a formated string, ready to be written to an .xml file.</li>
+<li><strong>json</strong> (<em>str</em><em>, </em><em>optional</em>) – Indicates that the method should return a JSON object.</li>
+<li><strong>Returns</strong> – </li>
+<li><strong>info_formats</strong> (<em>dict</em>) – A dict that holds between zero to three pairs, with the possible items being the product’s information in the three different formats.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">get_main_info</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
+<dd><p>Return the scraped main information of a product.</p>
+<p>This can be a dictionary, a formated string to be written to an .xml file and/or a JSON object. The returned formats are saved in a single dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dictionary</strong> (<em>str</em><em>, </em><em>optional</em>) – Indicates that the method should return the information in the form of a Python dictionary.</li>
+<li><strong>xml</strong> (<em>str</em><em>, </em><em>optional</em>) – Indicates that the method should return a formated string, ready to be written to an .xml file.</li>
+<li><strong>json</strong> (<em>str</em><em>, </em><em>optional</em>) – Indicates that the method should return a JSON object.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>info_formats</strong> – A dict that holds between zero to three pairs, with the possible values for each pair being the product’s main information in the three different formats.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">get_prod_source</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Get the BeautifulSoup object with the source code of a single product’s page.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>None</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The source code of the product’s page.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">requests.models.Response</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">main_info_types</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Returns a tuple with all the types of information about a product that are considered as main types of information.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>None</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The tuple with the main information types’ names.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">on_sale</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Test if a product is on sale. It returns a Boolean value after checking if the product has an original price and a discount percentage.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>None</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the product’s original price and discount percentage attributes are not None, else False.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">prod_info_types</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Return a sorted list with the different types of information that can be scraped about a product.</p>
+<p>These types can be passed as arguments in other methods to scrape specific informations about a product.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>None</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An alphabetically sorted list with all the types of information.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">specific_info</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span></dt>
+<dd><p>Return only the information that was passed as an argument to the method call. If no argument was passed, return all of the “Extra Information” scraped.</p>
+<p>For a full list of supported arguments, call the prod_info_types() method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>optional</strong> (<em>list</em><em>,</em>) – A list of strings of the types of information to be returned as a dictionary.</li>
+<li><strong>Returns</strong> – </li>
+<li><strong>prod_extra_info</strong> (<em>dict</em>) – A dictionary with key-value pairs of the type info_type: value.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to wortenpy’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, José Costa.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

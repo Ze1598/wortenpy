@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module wortenpy</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>wortenpy</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cze179%5Cdesktop%5Ctemporary%5Ccode%5Cprojects%5Cscrape_worten%5Cwortenpy%5Cwortenpy.py">c:\users\ze179\desktop\temporary\code\projects\scrape_worten\wortenpy\wortenpy.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;<a href="http://docs.python-requests.org/en/master/">http://docs.python-requests.org/en/master/</a></tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="json.html">json</a><br>
+</td><td width="25%" valign=top><a href="urllib.html">urllib</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="wortenpy.html#Product">Product</a>
+</font></dt><dt><font face="helvetica, arial"><a href="wortenpy.html#Worten">Worten</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Product">class <strong>Product</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;for&nbsp;interacting&nbsp;with&nbsp;a&nbsp;single&nbsp;product's&nbsp;page.<br>
+&nbsp;<br>
+Attributes<br>
+----------<br>
+all_info&nbsp;:&nbsp;dict<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Dictionary&nbsp;with&nbsp;all&nbsp;the&nbsp;information&nbsp;scraped&nbsp;about&nbsp;a&nbsp;product.<br>
+json_format&nbsp;:&nbsp;dict<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;string&nbsp;to&nbsp;hold&nbsp;a&nbsp;JSON&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;the&nbsp;product's&nbsp;main&nbsp;information.<br>
+more_info&nbsp;:&nbsp;bs4.element.Tag<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;part&nbsp;of&nbsp;the&nbsp;product&nbsp;page's&nbsp;source&nbsp;code&nbsp;about&nbsp;its&nbsp;detailed&nbsp;information.<br>
+num_pics&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;pictures&nbsp;available&nbsp;for&nbsp;the&nbsp;product.<br>
+og_price&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Original&nbsp;price&nbsp;for&nbsp;the&nbsp;product&nbsp;(in&nbsp;case&nbsp;it's&nbsp;on&nbsp;sale).<br>
+pictures&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;list&nbsp;with&nbsp;the&nbsp;URLs&nbsp;for&nbsp;the&nbsp;available&nbsp;product&nbsp;pictures.<br>
+price_unit&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Unit&nbsp;used&nbsp;for&nbsp;the&nbsp;product&nbsp;price.<br>
+prod_avail&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;product&nbsp;availability&nbsp;status.<br>
+prod_brand&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;product's&nbsp;brand.<br>
+prod_cat&nbsp;:&nbsp;str)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;product&nbsp;category.<br>
+prod_color&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;color&nbsp;of&nbsp;the&nbsp;product.<br>
+prod_desc&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;product&nbsp;description.<br>
+prod_dimensions&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Dimensions&nbsp;of&nbsp;the&nbsp;product.<br>
+prod_discount&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Discount&nbsp;percentage&nbsp;(in&nbsp;case&nbsp;the&nbsp;product&nbsp;is&nbsp;on&nbsp;sale).<br>
+prod_ean&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;product's&nbsp;European&nbsp;Article&nbsp;Number,&nbsp;also&nbsp;known&nbsp;as&nbsp;International&nbsp;Article&nbsp;Number.<br>
+prod_link&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#Product">Product</a>&nbsp;page's&nbsp;URL.<br>
+prod_model&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;product&nbsp;model.<br>
+prod_name&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;of&nbsp;the&nbsp;product.<br>
+prod_price&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;product's&nbsp;current&nbsp;price.<br>
+prod_ref&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;product&nbsp;internal&nbsp;reference.<br>
+prod_weight&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;product&nbsp;weight.<br>
+query_prod&nbsp;:&nbsp;requests.models.Response<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;response&nbsp;for&nbsp;the&nbsp;GET&nbsp;request&nbsp;of&nbsp;a&nbsp;product's&nbsp;page.<br>
+query_prod_soup&nbsp;:&nbsp;bs4.BeautifulSoup<br>
+&nbsp;&nbsp;&nbsp;&nbsp;BeautifulSoup&nbsp;<a href="builtins.html#object">object</a>&nbsp;for&nbsp;a&nbsp;product's&nbsp;page.<br>
+xml_format&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;string&nbsp;to&nbsp;hold&nbsp;a&nbsp;XML&nbsp;with&nbsp;the&nbsp;product's&nbsp;main&nbsp;information.<br>
+&nbsp;<br>
+Methods<br>
+-------<br>
+<a href="#Product-connected">connected</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Test&nbsp;if&nbsp;the&nbsp;connection&nbsp;to&nbsp;the&nbsp;product&nbsp;page&nbsp;was&nbsp;successful.<br>
+<a href="#Product-get_prod_source">get_prod_source</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Get&nbsp;the&nbsp;source&nbsp;code&nbsp;of&nbsp;the&nbsp;product&nbsp;page.<br>
+<a href="#Product-on_sale">on_sale</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Check&nbsp;if&nbsp;the&nbsp;product&nbsp;is&nbsp;on&nbsp;sale.<br>
+<a href="#Product-get_main_info">get_main_info</a>(*args)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Get&nbsp;a&nbsp;Python&nbsp;dictionary&nbsp;and/or&nbsp;XML&nbsp;string&nbsp;and/or&nbsp;JSON&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;the&nbsp;main&nbsp;informations&nbsp;about&nbsp;the&nbsp;product.<br>
+<a href="#Product-main_info_types">main_info_types</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;the&nbsp;main&nbsp;information&nbsp;types'&nbsp;names.<br>
+<a href="#Product-prod_info_types">prod_info_types</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;the&nbsp;name&nbsp;of&nbsp;all&nbsp;the&nbsp;types&nbsp;of&nbsp;information.<br>
+<a href="#Product-get_all_info">get_all_info</a>(*args)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Get&nbsp;a&nbsp;Python&nbsp;dictionary&nbsp;and/or&nbsp;XML&nbsp;string&nbsp;and/or&nbsp;JSON&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;all&nbsp;the&nbsp;informations&nbsp;about&nbsp;the&nbsp;product.<br>
+<a href="#Product-specific_info">specific_info</a>(*args)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Get&nbsp;a&nbsp;Python&nbsp;dictionary&nbsp;with&nbsp;only&nbsp;the&nbsp;types&nbsp;of&nbsp;information&nbsp;passed&nbsp;as&nbsp;arguments&nbsp;to&nbsp;the&nbsp;function&nbsp;call.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Product-__help__"><strong>__help__</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;class'&nbsp;docstring.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+None<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;class'&nbsp;docstring.</tt></dd></dl>
+
+<dl><dt><a name="Product-__init__"><strong>__init__</strong></a>(self, product)</dt><dd><tt>Make&nbsp;a&nbsp;GET&nbsp;request&nbsp;for&nbsp;the&nbsp;page&nbsp;of&nbsp;a&nbsp;given&nbsp;product.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+product&nbsp;:&nbsp;bs4.element.Tag<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;portion&nbsp;of&nbsp;the&nbsp;source&nbsp;code&nbsp;of&nbsp;a&nbsp;page&nbsp;of&nbsp;results&nbsp;from&nbsp;a&nbsp;text&nbsp;query&nbsp;made&nbsp;on&nbsp;<a href="#Worten">Worten</a>'s&nbsp;website,&nbsp;relative&nbsp;to&nbsp;a&nbsp;single&nbsp;product.</tt></dd></dl>
+
+<dl><dt><a name="Product-connected"><strong>connected</strong></a>(self)</dt><dd><tt>Test&nbsp;if&nbsp;the&nbsp;connection&nbsp;to&nbsp;the&nbsp;product&nbsp;page&nbsp;was&nbsp;successfully&nbsp;established.&nbsp;In&nbsp;other&nbsp;words,&nbsp;we&nbsp;are&nbsp;testing&nbsp;if&nbsp;the&nbsp;request's&nbsp;status&nbsp;code&nbsp;is&nbsp;in&nbsp;the&nbsp;200's.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+None<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;True&nbsp;if&nbsp;the&nbsp;connection&nbsp;was&nbsp;successful,&nbsp;else&nbsp;False.</tt></dd></dl>
+
+<dl><dt><a name="Product-get_all_info"><strong>get_all_info</strong></a>(self, *args)</dt><dd><tt>Return&nbsp;all&nbsp;the&nbsp;scraped&nbsp;main&nbsp;information&nbsp;of&nbsp;a&nbsp;product.<br>
+&nbsp;<br>
+This&nbsp;can&nbsp;be&nbsp;a&nbsp;dictionary,&nbsp;a&nbsp;formated&nbsp;string&nbsp;to&nbsp;be&nbsp;written&nbsp;to&nbsp;an&nbsp;.xml&nbsp;file&nbsp;and/or&nbsp;a&nbsp;JSON&nbsp;<a href="builtins.html#object">object</a>.&nbsp;The&nbsp;returned&nbsp;formats&nbsp;are&nbsp;saved&nbsp;in&nbsp;a&nbsp;single&nbsp;dictionary.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+dictionary&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Indicates&nbsp;that&nbsp;the&nbsp;method&nbsp;should&nbsp;return&nbsp;the&nbsp;information&nbsp;in&nbsp;the&nbsp;form&nbsp;of&nbsp;a&nbsp;Python&nbsp;dictionary.<br>
+xml&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Indicates&nbsp;that&nbsp;the&nbsp;method&nbsp;should&nbsp;return&nbsp;a&nbsp;formated&nbsp;string,&nbsp;ready&nbsp;to&nbsp;be&nbsp;written&nbsp;to&nbsp;an&nbsp;.xml&nbsp;file.<br>
+json&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Indicates&nbsp;that&nbsp;the&nbsp;method&nbsp;should&nbsp;return&nbsp;a&nbsp;JSON&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+Returns:<br>
+info_formats&nbsp;:&nbsp;dict<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dict&nbsp;that&nbsp;holds&nbsp;between&nbsp;zero&nbsp;to&nbsp;three&nbsp;pairs,&nbsp;with&nbsp;the&nbsp;possible&nbsp;items&nbsp;being&nbsp;the&nbsp;product's&nbsp;information&nbsp;in&nbsp;the&nbsp;three&nbsp;different&nbsp;formats.</tt></dd></dl>
+
+<dl><dt><a name="Product-get_main_info"><strong>get_main_info</strong></a>(self, *args)</dt><dd><tt>Return&nbsp;the&nbsp;scraped&nbsp;main&nbsp;information&nbsp;of&nbsp;a&nbsp;product.<br>
+&nbsp;<br>
+This&nbsp;can&nbsp;be&nbsp;a&nbsp;dictionary,&nbsp;a&nbsp;formated&nbsp;string&nbsp;to&nbsp;be&nbsp;written&nbsp;to&nbsp;an&nbsp;.xml&nbsp;file&nbsp;and/or&nbsp;a&nbsp;JSON&nbsp;<a href="builtins.html#object">object</a>.&nbsp;The&nbsp;returned&nbsp;formats&nbsp;are&nbsp;saved&nbsp;in&nbsp;a&nbsp;single&nbsp;dictionary.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+dictionary&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Indicates&nbsp;that&nbsp;the&nbsp;method&nbsp;should&nbsp;return&nbsp;the&nbsp;information&nbsp;in&nbsp;the&nbsp;form&nbsp;of&nbsp;a&nbsp;Python&nbsp;dictionary.<br>
+xml&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Indicates&nbsp;that&nbsp;the&nbsp;method&nbsp;should&nbsp;return&nbsp;a&nbsp;formated&nbsp;string,&nbsp;ready&nbsp;to&nbsp;be&nbsp;written&nbsp;to&nbsp;an&nbsp;.xml&nbsp;file.<br>
+json&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Indicates&nbsp;that&nbsp;the&nbsp;method&nbsp;should&nbsp;return&nbsp;a&nbsp;JSON&nbsp;<a href="builtins.html#object">object</a>.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+info_formats&nbsp;:&nbsp;dict<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dict&nbsp;that&nbsp;holds&nbsp;between&nbsp;zero&nbsp;to&nbsp;three&nbsp;pairs,&nbsp;with&nbsp;the&nbsp;possible&nbsp;values&nbsp;for&nbsp;each&nbsp;pair&nbsp;being&nbsp;the&nbsp;product's&nbsp;main&nbsp;information&nbsp;in&nbsp;the&nbsp;three&nbsp;different&nbsp;formats.</tt></dd></dl>
+
+<dl><dt><a name="Product-get_prod_source"><strong>get_prod_source</strong></a>(self)</dt><dd><tt>Get&nbsp;the&nbsp;BeautifulSoup&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;the&nbsp;source&nbsp;code&nbsp;of&nbsp;a&nbsp;single&nbsp;product's&nbsp;page.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+None<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+requests.models.Response<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;source&nbsp;code&nbsp;of&nbsp;the&nbsp;product's&nbsp;page.</tt></dd></dl>
+
+<dl><dt><a name="Product-main_info_types"><strong>main_info_types</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;tuple&nbsp;with&nbsp;all&nbsp;the&nbsp;types&nbsp;of&nbsp;information&nbsp;about&nbsp;a&nbsp;product&nbsp;that&nbsp;are&nbsp;considered&nbsp;as&nbsp;main&nbsp;types&nbsp;of&nbsp;information.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+None<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+tuple<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;tuple&nbsp;with&nbsp;the&nbsp;main&nbsp;information&nbsp;types'&nbsp;names.</tt></dd></dl>
+
+<dl><dt><a name="Product-on_sale"><strong>on_sale</strong></a>(self)</dt><dd><tt>Test&nbsp;if&nbsp;a&nbsp;product&nbsp;is&nbsp;on&nbsp;sale.&nbsp;It&nbsp;returns&nbsp;a&nbsp;Boolean&nbsp;value&nbsp;after&nbsp;checking&nbsp;if&nbsp;the&nbsp;product&nbsp;has&nbsp;an&nbsp;original&nbsp;price&nbsp;and&nbsp;a&nbsp;discount&nbsp;percentage.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+None<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;True&nbsp;if&nbsp;the&nbsp;product's&nbsp;original&nbsp;price&nbsp;and&nbsp;discount&nbsp;percentage&nbsp;attributes&nbsp;are&nbsp;not&nbsp;None,&nbsp;else&nbsp;False.</tt></dd></dl>
+
+<dl><dt><a name="Product-prod_info_types"><strong>prod_info_types</strong></a>(self)</dt><dd><tt>Return&nbsp;a&nbsp;sorted&nbsp;list&nbsp;with&nbsp;the&nbsp;different&nbsp;types&nbsp;of&nbsp;information&nbsp;that&nbsp;can&nbsp;be&nbsp;scraped&nbsp;about&nbsp;a&nbsp;product.<br>
+&nbsp;<br>
+These&nbsp;types&nbsp;can&nbsp;be&nbsp;passed&nbsp;as&nbsp;arguments&nbsp;in&nbsp;other&nbsp;methods&nbsp;to&nbsp;scrape&nbsp;specific&nbsp;informations&nbsp;about&nbsp;a&nbsp;product.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+None<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;An&nbsp;alphabetically&nbsp;sorted&nbsp;list&nbsp;with&nbsp;all&nbsp;the&nbsp;types&nbsp;of&nbsp;information.</tt></dd></dl>
+
+<dl><dt><a name="Product-specific_info"><strong>specific_info</strong></a>(self, *args)</dt><dd><tt>Return&nbsp;only&nbsp;the&nbsp;information&nbsp;that&nbsp;was&nbsp;passed&nbsp;as&nbsp;an&nbsp;argument&nbsp;to&nbsp;the&nbsp;method&nbsp;call.&nbsp;If&nbsp;no&nbsp;argument&nbsp;was&nbsp;passed,&nbsp;return&nbsp;all&nbsp;of&nbsp;the&nbsp;"Extra&nbsp;Information"&nbsp;scraped.<br>
+&nbsp;<br>
+For&nbsp;a&nbsp;full&nbsp;list&nbsp;of&nbsp;supported&nbsp;arguments,&nbsp;call&nbsp;the&nbsp;<a href="#Product-prod_info_types">prod_info_types</a>()&nbsp;method.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+list,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;list&nbsp;of&nbsp;strings&nbsp;of&nbsp;the&nbsp;types&nbsp;of&nbsp;information&nbsp;to&nbsp;be&nbsp;returned&nbsp;as&nbsp;a&nbsp;dictionary.<br>
+&nbsp;<br>
+Returns:<br>
+prod_extra_info&nbsp;:&nbsp;dict<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dictionary&nbsp;with&nbsp;key-value&nbsp;pairs&nbsp;of&nbsp;the&nbsp;type&nbsp;info_type:&nbsp;value.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Worten">class <strong>Worten</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;for&nbsp;connecting&nbsp;to&nbsp;<a href="#Worten">Worten</a>&nbsp;and&nbsp;retrieving&nbsp;products&nbsp;from&nbsp;queries.<br>
+&nbsp;<br>
+...<br>
+&nbsp;<br>
+Attributes<br>
+----------<br>
+endpoint&nbsp;:&nbsp;str&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;target&nbsp;website&nbsp;(worten.pt&nbsp;in&nbsp;this&nbsp;case).<br>
+hitsPerPage&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;number&nbsp;of&nbsp;results&nbsp;to&nbsp;be&nbsp;shown&nbsp;per&nbsp;page.<br>
+page&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;page&nbsp;of&nbsp;results&nbsp;to&nbsp;request.<br>
+query&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;query&nbsp;search&nbsp;term(s).<br>
+query_soup&nbsp;:&nbsp;bs4.BeautifulSoup<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;BeautifulSoup&nbsp;<a href="builtins.html#object">object</a>&nbsp;holding&nbsp;the&nbsp;the&nbsp;source&nbsp;code&nbsp;for&nbsp;a&nbsp;page&nbsp;of&nbsp;query&nbsp;results.<br>
+retrived_prods&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;list&nbsp;of&nbsp;items&nbsp;where&nbsp;each&nbsp;item&nbsp;is&nbsp;the&nbsp;portion&nbsp;of&nbsp;the&nbsp;results&nbsp;page's&nbsp;HTML&nbsp;source&nbsp;code&nbsp;relative&nbsp;to&nbsp;a&nbsp;product&nbsp;result.<br>
+sortBy&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;sorting&nbsp;order&nbsp;for&nbsp;the&nbsp;query&nbsp;results.<br>
+total_num_prods_found&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Number&nbsp;of&nbsp;product&nbsp;results&nbsp;for&nbsp;the&nbsp;query.<br>
+&nbsp;<br>
+Methods<br>
+-------<br>
+<a href="#Worten-connected">connected</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Test&nbsp;if&nbsp;the&nbsp;connection&nbsp;to&nbsp;<a href="#Worten">Worten</a>&nbsp;was&nbsp;successful.<br>
+<a href="#Worten-make_query">make_query</a>(tags,&nbsp;**kwargs)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Make&nbsp;a&nbsp;text&nbsp;query&nbsp;for&nbsp;products.<br>
+<a href="#Worten-get_prods">get_prods</a>(num_prods)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Retrieve&nbsp;the&nbsp;first&nbsp;num_prods&nbsp;products&nbsp;from&nbsp;the&nbsp;query&nbsp;results,&nbsp;relative&nbsp;to&nbsp;the&nbsp;current&nbsp;page&nbsp;of&nbsp;results.<br>
+<a href="#Worten-get_prods_found">get_prods_found</a>(prods)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Return&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;mappings&nbsp;of&nbsp;product&nbsp;names&nbsp;to&nbsp;the&nbsp;URL&nbsp;of&nbsp;the&nbsp;product's&nbsp;page.<br>
+<a href="#Worten-get_prod_source">get_prod_source</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Get&nbsp;the&nbsp;BeautifulSoup&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;the&nbsp;source&nbsp;code&nbsp;of&nbsp;the&nbsp;current&nbsp;page&nbsp;of&nbsp;the&nbsp;query's&nbsp;results.<br>
+<a href="#Worten-query_params">query_params</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;information&nbsp;about&nbsp;the&nbsp;query&nbsp;parameters&nbsp;available&nbsp;to&nbsp;make&nbsp;text&nbsp;queries&nbsp;to&nbsp;<a href="#Worten">Worten</a>.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Worten-__help__"><strong>__help__</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;class'&nbsp;docstring.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+None<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;class'&nbsp;docstring.</tt></dd></dl>
+
+<dl><dt><a name="Worten-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initialize&nbsp;the&nbsp;<a href="builtins.html#object">object</a>&nbsp;by&nbsp;making&nbsp;a&nbsp;GET&nbsp;request&nbsp;to&nbsp;<a href="#Worten">Worten</a>.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+None</tt></dd></dl>
+
+<dl><dt><a name="Worten-connected"><strong>connected</strong></a>(self)</dt><dd><tt>Test&nbsp;if&nbsp;the&nbsp;connection&nbsp;to&nbsp;<a href="#Worten">Worten</a>&nbsp;was&nbsp;successfully<br>
+established.&nbsp;In&nbsp;other&nbsp;words,&nbsp;we&nbsp;are&nbsp;testing&nbsp;if&nbsp;the<br>
+request's&nbsp;status&nbsp;code&nbsp;is&nbsp;in&nbsp;the&nbsp;200's.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+None<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+bool<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;True&nbsp;if&nbsp;the&nbsp;connection&nbsp;was&nbsp;successful,&nbsp;else&nbsp;False.</tt></dd></dl>
+
+<dl><dt><a name="Worten-get_prod_source"><strong>get_prod_source</strong></a>(self)</dt><dd><tt>Get&nbsp;the&nbsp;BeautifulSoup&nbsp;<a href="builtins.html#object">object</a>&nbsp;with&nbsp;the&nbsp;source&nbsp;code&nbsp;of&nbsp;the&nbsp;current&nbsp;page&nbsp;of&nbsp;query&nbsp;results.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+None<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+requests.models.Response<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;source&nbsp;code&nbsp;of&nbsp;the&nbsp;page.</tt></dd></dl>
+
+<dl><dt><a name="Worten-get_prods"><strong>get_prods</strong></a>(self, num_prods)</dt><dd><tt>Retrieve&nbsp;the&nbsp;first&nbsp;num_prods&nbsp;products&nbsp;from&nbsp;the&nbsp;query&nbsp;results&nbsp;(relative&nbsp;to&nbsp;the&nbsp;requested&nbsp;page&nbsp;not&nbsp;the&nbsp;first&nbsp;page&nbsp;of&nbsp;results).<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+num_prods&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;first&nbsp;num_prods&nbsp;products&nbsp;will&nbsp;be&nbsp;retrieved.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+retrieved_prods&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;list&nbsp;of&nbsp;all&nbsp;the&nbsp;retrived&nbsp;products&nbsp;(rather,&nbsp;a&nbsp;list&nbsp;where&nbsp;each&nbsp;item&nbsp;is&nbsp;the&nbsp;portion&nbsp;of&nbsp;the&nbsp;results&nbsp;page's&nbsp;source&nbsp;code&nbsp;that's&nbsp;relative&nbsp;to&nbsp;the&nbsp;retrieved&nbsp;products).</tt></dd></dl>
+
+<dl><dt><a name="Worten-get_prods_found"><strong>get_prods_found</strong></a>(self, prods)</dt><dd><tt>Return&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;mappings&nbsp;of&nbsp;the&nbsp;products'&nbsp;names&nbsp;found&nbsp;to&nbsp;the&nbsp;the&nbsp;URL&nbsp;of&nbsp;its&nbsp;pages.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+prods&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;list&nbsp;of&nbsp;snippets&nbsp;of&nbsp;HTML&nbsp;from&nbsp;the&nbsp;scraped&nbsp;source&nbsp;code&nbsp;of&nbsp;a&nbsp;page&nbsp;of&nbsp;results,&nbsp;where&nbsp;each&nbsp;snippet&nbsp;pertains&nbsp;to&nbsp;a&nbsp;specific&nbsp;result&nbsp;in&nbsp;a&nbsp;query.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+dict<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;dictionary&nbsp;with&nbsp;the&nbsp;mapping&nbsp;of&nbsp;product&nbsp;names&nbsp;to&nbsp;its&nbsp;pages'&nbsp;URLs.</tt></dd></dl>
+
+<dl><dt><a name="Worten-make_query"><strong>make_query</strong></a>(self, tags, **kwargs)</dt><dd><tt>Make&nbsp;a&nbsp;query&nbsp;to&nbsp;<a href="#Worten">Worten</a>,&nbsp;that&nbsp;is,&nbsp;search&nbsp;for&nbsp;products.<br>
+&nbsp;<br>
+Parameters&nbsp;for&nbsp;the&nbsp;query,&nbsp;except&nbsp;for&nbsp;the&nbsp;tags,&nbsp;must&nbsp;be&nbsp;passed&nbsp;as&nbsp;keyword&nbsp;arguments,&nbsp;with&nbsp;string&nbsp;values.&nbsp;For&nbsp;example:&nbsp;<br>
+<a href="#Worten-make_query">make_query</a>("god&nbsp;of&nbsp;war",&nbsp;sortBy="name",&nbsp;hitsPerPage="12",&nbsp;page="2")<br>
+&nbsp;<br>
+When&nbsp;the&nbsp;parameters&nbsp;are&nbsp;passed,&nbsp;sortBy&nbsp;defaults&nbsp;to&nbsp;"relevance",&nbsp;hitsPerPage&nbsp;to&nbsp;"24"&nbsp;and&nbsp;page&nbsp;to&nbsp;"1".<br>
+&nbsp;<br>
+For&nbsp;more&nbsp;information&nbsp;about&nbsp;the&nbsp;parameters,&nbsp;call&nbsp;the&nbsp;query_params&nbsp;method.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+tags&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;string&nbsp;containing&nbsp;the&nbsp;tags&nbsp;for&nbsp;the&nbsp;query.<br>
+sortBy&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;sorting&nbsp;order&nbsp;for&nbsp;the&nbsp;query&nbsp;results.<br>
+hitsPerPage&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;number&nbsp;of&nbsp;results&nbsp;to&nbsp;be&nbsp;shown&nbsp;per&nbsp;page.<br>
+page&nbsp;:&nbsp;str,&nbsp;optional<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;page&nbsp;of&nbsp;results&nbsp;to&nbsp;request.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+query_soup&nbsp;:&nbsp;bs4.BeautifulSoup<br>
+&nbsp;&nbsp;&nbsp;&nbsp;A&nbsp;BeautifulSoup&nbsp;<a href="builtins.html#object">object</a>&nbsp;holding&nbsp;the&nbsp;the&nbsp;source&nbsp;code&nbsp;for&nbsp;the&nbsp;requested&nbsp;page&nbsp;of&nbsp;query&nbsp;results.<br>
+&nbsp;<br>
+Raises<br>
+------<br>
+NameError<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Raised&nbsp;if&nbsp;the&nbsp;user&nbsp;requested&nbsp;a&nbsp;page&nbsp;of&nbsp;results&nbsp;that&nbsp;doesn't&nbsp;exist.</tt></dd></dl>
+
+<dl><dt><a name="Worten-query_params"><strong>query_params</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;information&nbsp;about&nbsp;each&nbsp;query&nbsp;parameter.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+The&nbsp;value&nbsp;for&nbsp;each&nbsp;pair&nbsp;is&nbsp;a&nbsp;tuple&nbsp;where&nbsp;the&nbsp;first&nbsp;item&nbsp;is&nbsp;a&nbsp;brief&nbsp;explanation&nbsp;of&nbsp;the&nbsp;parameter,&nbsp;the&nbsp;second&nbsp;item&nbsp;is&nbsp;a&nbsp;list&nbsp;of&nbsp;the&nbsp;possible&nbsp;values&nbsp;for&nbsp;each&nbsp;parameter&nbsp;and&nbsp;the&nbsp;third&nbsp;item&nbsp;is&nbsp;the&nbsp;default&nbsp;value.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+None<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+dict<br>
+&nbsp;&nbsp;&nbsp;&nbsp;The&nbsp;dictionary&nbsp;with&nbsp;the&nbsp;parameters'&nbsp;informations.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>translations</strong> = {'3º Nível para Talheres': 'level_for_flatware', 'Abertura Máxima': 'max_lens_aperture', 'Abertura Mínima': 'min_lens_aperture', 'Abertura da Porta': 'door_opening', 'Abertura máxima': 'max_lens_aperture', 'Abertura mínima': 'min_lens_aperture', 'Acabamento': 'topcoat', 'Acelerómetro': 'accelerometer', 'Acessórios': 'accessories', 'Acessórios Opcionais': 'optional_accessories', ...}</td></tr></table>
+</body></html>
