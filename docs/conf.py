@@ -21,8 +21,8 @@ sys.path.insert(0, os.path.abspath('../'))
 # -- Project information -----------------------------------------------------
 
 project = 'wortenpy'
-copyright = '2018, José Costa'
-author = 'José Costa'
+copyright = '2018, Jose Costa'
+author = 'Jose Costa'
 
 # The short X.Y version
 version = ''
@@ -136,7 +136,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'wortenpy.tex', 'wortenpy Documentation',
-     'José Costa', 'manual'),
+     'Jose Costa', 'manual'),
 ]
 
 
