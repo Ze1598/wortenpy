@@ -227,7 +227,8 @@ relative to the retrieved products).
                 break
             
             # Find all products in the current page
-            prods = query_soup_temp.find_all('div', class_='w-product qa-product__content--')
+            # prods = query_soup_temp.find_all('div', class_='w-product qa-product__content--')
+            prods = query_soup_temp.find('div', class_='w-products-list__wrapper').find_all('div', class_='w-product iss-product qa-product__content--')
 
             # Now loop through the page of results to scrape more products
             for i in range(products_left):
@@ -251,7 +252,7 @@ relative to the retrieved products).
             # have
             if int(page) > last_page:
                 break
-                    
+        
         return self.retrived_prods
     
     # Dictionary with pairs prod_name: prod_url
@@ -527,29 +528,18 @@ a text query made on Worten's website, relative to a single product.
         self.all_info['prod_og_price'] = self.prod_og_price
         self.all_info['prod_discount'] = self.prod_discount
 
-
         # Product pictures' links
-        # If this <div> is found, run the following block of code.
-        # This <div> is only present when the product has 5 or \
-        # less pictures
-        # if self.query_prod_soup.find('div', class_='swiper-container w-product-gallery__thumbnails swiper__off').find_all('div', class_='swiper-slide'):
-        if self.query_prod_soup.find('div', class_='swiper-container w-product-gallery__thumbnails swiper__off'):
-            pics = self.query_prod_soup.find('div', class_='swiper-container w-product-gallery__thumbnails swiper__off')\
-            .find_all('div', class_='swiper-slide')
-            self.pictures = ['https://www.worten.pt'+pic.a.img["src"] for pic in pics]
-        
-        # If the above <div> is not found, try to find this <div>\
-        # instead.
-        # This <div> only exists when a product has more than 5 pictures
-        # elif self.query_prod_soup.find('div', class_='swiper-wrapper').find_all('div'):
-        elif self.query_prod_soup.find('div', class_='swiper-wrapper'):            
+        # If a <div> element with `swipper-wrapper` class is found, then\
+        # scrape the <img> elements it contains for their sources (`src`)
+        if self.query_prod_soup.find('div', class_='swiper-wrapper'):
             pics = self.query_prod_soup.find('div', class_='swiper-wrapper').find_all('div')
-            self.pictures = ['https://www.worten.pt'+pic.a.img["src"] for pic in pics]
-
-        # If neither of the above <div> are found, assume the product\
-        # doesn't have pictures
+            # Product image URLs need to be prefixed with Worten's URL
+            self.pictures = ['https://www.worten.pt'+pic.img["src"] for pic in pics]
+        # If the <div> is not found then assume the product doesn't\
+        # have pictures
         else:
             self.pictures = []
+        # Update the product informations with the list of pictures (URLs)
         self.all_info['prod_pictures'] = self.pictures
 
         # Number of product pictures
@@ -1067,7 +1057,8 @@ if __name__ == '__main__':
 
 
     # Tags for the query on worten.pt
-    query_tags = 'spider man ps4'
+    query_tags = 'astral chain'
+    # query_tags = "pokémon shield"
 
     # Create an object for connecting to Worten 
     connect = Worten()
@@ -1134,7 +1125,6 @@ if __name__ == '__main__':
     # you want as arguments.
     # For a list of supported arguments, call the prod_info_types() method
     # print(single_prod.specific_info('model', 'prod_brand', 'prod_desc'))
-
 
 
     # Write the created XML using the main scraped information\

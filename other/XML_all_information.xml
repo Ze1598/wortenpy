@@ -1,72 +1,50 @@
 <?xml version="1.0" encoding="iso-8859-15" ?>
-<product reference="6060387" EAN="0045496452315" availability="Available">
-	<name>Consola NINTENDO Switch Cinzenta</name>
-	<page href="https://www.worten.pt/gaming/nintendo-switch/consolas-nintendo-switch/consola-nintendo-switch-cinzenta-6060387"/>
-	<category>Consolas Nintendo Switch</category>
-	<price on_sale="N" unit="EURO">329,99</price>
-	<original_price discount="None" unit="EURO">None</original_price>
+<product reference="6887803" EAN="0045496424718" availability="Not Available">
+	<name>Pré-venda Jogo Nintendo Switch Astral Chain</name>
+	<page href="https://www.worten.pt/gaming/nintendo-switch/jogos-nintendo-switch/pre-venda-jogo-nintendo-switch-astral-chain-6887803"/>
+	<category>Jogos Nintendo Switch</category>
+	<price on_sale="Y" unit="EURO">50,99</price>
+	<original_price discount="15.0%" unit="EURO">59,99</original_price>
 	<pictures>
-		<picture href="https://www.worten.pt/i/7eb65db02f2baadbde4a3f8c010e0c5b3143508e.jpg"/>
-		<picture href="https://www.worten.pt/i/08131e5a92ca06a7d58abb808fb6a858490dca04.jpg"/>
-		<picture href="https://www.worten.pt/i/34ae265de6f664954c7e0367ae50a50279bb4d7b.jpg"/>
-		<picture href="https://www.worten.pt/i/2db661aca2dd1bef03a803e98a0a8f85cf9e8756.jpg"/>
-		<picture href="https://www.worten.pt/i/38593833baa6ffe5380016e994f17d05853f5c8f.jpg"/>
-		<picture href="https://www.worten.pt/i/98cd03eb76ffd50dd14df2f2c4d0e6830545bba2.jpg"/>
-		<picture href="https://www.worten.pt/i/a2e86a2b547fdbc4870ade82c0fd0c7530587685.jpg"/>
-		<picture href="https://www.worten.pt/i/f76ab1a092d9d6f930605a6fbddb9ed6e2ee9a7d.jpg"/>
-		<picture href="https://www.worten.pt/i/388e001dd2311214abafd04ea31418422e51f456.jpg"/>
-		<picture href="https://www.worten.pt/i/c24ab91660243de752e62eed8f665c7b3fdc9f07.jpg"/>
-		<picture href="https://www.worten.pt/i/b6f4959f6342eb18c883adb1847256678e91502f.jpg"/>
-		<picture href="https://www.worten.pt/i/f47736ce3da15725949bf59bc660447f2dfe4607.jpg"/>
-		<picture href="https://www.worten.pt/i/3bac30e3995aca1bc8451168c73fe162987426a6.jpg"/>
-		<picture href="https://www.worten.pt/i/529adb89dd4ccfcdbd0fe6ae01a4b81b35fbd3ee.jpg"/>
-		<picture href="https://www.worten.pt//img.youtube.com/vi/jfKw0BYmIfg/default.jpg"/>
-		<picture href="https://www.worten.pt//img.youtube.com/vi/S_dZ93lsZQ8/default.jpg"/>
+		<picture href="https://www.worten.pt/i/a16f301591f43216774cfbd352639e640c417bae.jpg"/>
+		<picture href="https://www.worten.pt/i/8d83a8b9e676d65dfb649da0fd58e1b1cf557227.jpg"/>
+		<picture href="https://www.worten.pt/i/18febccb3c20ab8973ae3058e5a31bf5c7c06f69.jpg"/>
+		<picture href="https://www.worten.pt/i/b5c29e77d61598cb85db28f9940673bcb9ba5ede.jpg"/>
+		<picture href="https://www.worten.pt/i/731812c024f93f55d4b2a3b33771c6ed77a22e45.jpg"/>
+		<picture href="https://www.worten.pt/i/6215eddbd493b2e9c7dbd5e06672ff975a1b9dfa.jpg"/>
+		<picture href="https://www.worten.pt/i/12b09cd908750a5a736c4a5588119ed0000342b7.jpg"/>
+		<picture href="https://www.worten.pt/i/59fe384bfdac123f4dc8c69dc04b30e22bbb28e1.jpg"/>
+		<picture href="https://www.worten.pt/i/ffbbfe6349debb5d74e83d357fa8fbc22bc7ca74.jpg"/>
+		<picture href="https://www.worten.pt/i/bbe44e0f30c087316c4c5f50afcaddadd3acb47e.jpg"/>
+		<picture href="https://www.worten.pt/i/e3c7af4d149df4ab2862ec2fb1d30e5ef9824339.jpg"/>
 	</pictures>
 	<description>None</description>
 	<more_info>
-		<info type="BRAND">NINTENDO</info>
-		<info type="MODEL">Nintendo Switch Cinzenta</info>
+		<info type="BRAND">NINTENDO TRANSD</info>
+		<info type="MODEL">None</info>
 		<info type="WEIGHT">None</info>
-		<info type="DIMENSIONS">13,9 mm cm</info>
-		<info type="COLOR">Cinzento</info>
-		<info type="prod_link">https://www.worten.pt/gaming/nintendo-switch/consolas-nintendo-switch/consola-nintendo-switch-cinzenta-6060387</info>
-		<info type="prod_name">Consola NINTENDO Switch Cinzenta</info>
-		<info type="prod_cat">Consolas Nintendo Switch</info>
-		<info type="prod_price">329,99</info>
+		<info type="DIMENSIONS">None</info>
+		<info type="COLOR">None</info>
+		<info type="prod_link">https://www.worten.pt/gaming/nintendo-switch/jogos-nintendo-switch/pre-venda-jogo-nintendo-switch-astral-chain-6887803</info>
+		<info type="prod_name">Pré-venda Jogo Nintendo Switch Astral Chain</info>
+		<info type="prod_cat">Jogos Nintendo Switch</info>
+		<info type="prod_price">50,99</info>
 		<info type="price_unit">EURO</info>
-		<info type="prod_og_price">None</info>
-		<info type="prod_discount">None</info>
-		<info type="prod_pictures">['https://www.worten.pt/i/7eb65db02f2baadbde4a3f8c010e0c5b3143508e.jpg', 'https://www.worten.pt/i/08131e5a92ca06a7d58abb808fb6a858490dca04.jpg', 'https://www.worten.pt/i/34ae265de6f664954c7e0367ae50a50279bb4d7b.jpg', 'https://www.worten.pt/i/2db661aca2dd1bef03a803e98a0a8f85cf9e8756.jpg', 'https://www.worten.pt/i/38593833baa6ffe5380016e994f17d05853f5c8f.jpg', 'https://www.worten.pt/i/98cd03eb76ffd50dd14df2f2c4d0e6830545bba2.jpg', 'https://www.worten.pt/i/a2e86a2b547fdbc4870ade82c0fd0c7530587685.jpg', 'https://www.worten.pt/i/f76ab1a092d9d6f930605a6fbddb9ed6e2ee9a7d.jpg', 'https://www.worten.pt/i/388e001dd2311214abafd04ea31418422e51f456.jpg', 'https://www.worten.pt/i/c24ab91660243de752e62eed8f665c7b3fdc9f07.jpg', 'https://www.worten.pt/i/b6f4959f6342eb18c883adb1847256678e91502f.jpg', 'https://www.worten.pt/i/f47736ce3da15725949bf59bc660447f2dfe4607.jpg', 'https://www.worten.pt/i/3bac30e3995aca1bc8451168c73fe162987426a6.jpg', 'https://www.worten.pt/i/529adb89dd4ccfcdbd0fe6ae01a4b81b35fbd3ee.jpg', 'https://www.worten.pt//img.youtube.com/vi/jfKw0BYmIfg/default.jpg', 'https://www.worten.pt//img.youtube.com/vi/S_dZ93lsZQ8/default.jpg']</info>
+		<info type="prod_og_price">59,99</info>
+		<info type="prod_discount">15.0%</info>
+		<info type="prod_pictures">['https://www.worten.pt/i/a16f301591f43216774cfbd352639e640c417bae.jpg', 'https://www.worten.pt/i/8d83a8b9e676d65dfb649da0fd58e1b1cf557227.jpg', 'https://www.worten.pt/i/18febccb3c20ab8973ae3058e5a31bf5c7c06f69.jpg', 'https://www.worten.pt/i/b5c29e77d61598cb85db28f9940673bcb9ba5ede.jpg', 'https://www.worten.pt/i/731812c024f93f55d4b2a3b33771c6ed77a22e45.jpg', 'https://www.worten.pt/i/6215eddbd493b2e9c7dbd5e06672ff975a1b9dfa.jpg', 'https://www.worten.pt/i/12b09cd908750a5a736c4a5588119ed0000342b7.jpg', 'https://www.worten.pt/i/59fe384bfdac123f4dc8c69dc04b30e22bbb28e1.jpg', 'https://www.worten.pt/i/ffbbfe6349debb5d74e83d357fa8fbc22bc7ca74.jpg', 'https://www.worten.pt/i/bbe44e0f30c087316c4c5f50afcaddadd3acb47e.jpg', 'https://www.worten.pt/i/e3c7af4d149df4ab2862ec2fb1d30e5ef9824339.jpg']</info>
 		<info type="prod_desc">None</info>
-		<info type="prod_ref">6060387</info>
-		<info type="prod_ean">0045496452315</info>
-		<info type="prod_brand">NINTENDO</info>
-		<info type="prod_model">Nintendo Switch Cinzenta</info>
+		<info type="prod_ref">6887803</info>
+		<info type="prod_ean">0045496424718</info>
+		<info type="prod_brand">NINTENDO TRANSD</info>
+		<info type="prod_model">None</info>
 		<info type="prod_weight">None</info>
-		<info type="prod_dimensions">13,9 mm cm</info>
-		<info type="reference">6060387</info>
-		<info type="brand">NINTENDO</info>
-		<info type="EAN">0045496452315</info>
-		<info type="model">Nintendo Switch Cinzenta</info>
-		<info type="warranty">2 anos</info>
-		<info type="color">Cinzento</info>
-		<info type="depth">13,9 mm</info>
+		<info type="prod_dimensions">None</info>
+		<info type="EAN">0045496424718</info>
+		<info type="brand">NINTENDO TRANSD</info>
 		<info type="platform">Nintendo Switch</info>
-		<info type="extra_content">Consola, 2 joy-cons, suporte/base, power adapter, suporte comandos, alças de controlo, manual instruções</info>
-		<info type="internal_storage">32 GB</info>
-		<info type="memory_card_type">Compatível com cartões de memória microSD, microSDHC e microSDXC.</info>
-		<info type="autonomy">A bateria poderá durar mais de seis horas, dependendo do título e das suas condições de utilização.</info>
-		<info type="screen_size">LCD de 6.2 polegadas</info>
-		<info type="screen_resolution">1280x720</info>
-		<info type="number_screens">1</info>
-		<info type="touch_screen">Sim</info>
-		<info type="camera">Sim</info>
-		<info type="audio_output">Sim</info>
-		<info type="video_output">Sim</info>
-		<info type="wifi">Sim</info>
-		<info type="bluetooth">Sim</info>
-		<info type="games_compatibility">Exclusivamente para cartões de jogo da Nintendo Switch.</info>
-		<info type="accessories_compatibility">Exclusivamente acessórios Switch</info>
+		<info type="genre">Ação/Aventura</info>
+		<info type="player_count">Até 2 Jogadores</info>
+		<info type="launch_month">ago/19</info>
 	</more_info>
 </product>
